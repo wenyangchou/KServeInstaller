@@ -17,4 +17,4 @@ spec:
         requests:
           memory: "1Gi"
           cpu: "1"
-      storageUri: "https://github.com/wenyangchou/KServeInstaller/models/model.bst"
+      storageUri: "https://raw.githubusercontent.com/wenyangchou/KServeInstaller/main/models/model.bst"
