@@ -1,0 +1,20 @@
+apiVersion: "serving.kserve.io/v1beta1"
+kind: "InferenceService"
+metadata:
+  name: "test-lgb"
+spec:
+  predictor:
+    maxReplicas: 1
+    minReplicas: 1
+    canaryTrafficPercent: 100
+    lightgbm:
+      image: wenyangchou/kserve-lgbserver:v0.7.0-20211129
+      imagePullPolicy: IfNotPresent
+      resources:
+        limits:
+          memory: "1Gi"
+          cpu: "1"
+        requests:
+          memory: "1Gi"
+          cpu: "1"
+      storageUri: "https://github.com/wenyangchou/KServeInstaller/models/model.bst"
